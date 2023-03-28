@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Answer = ({ text }) => {
+const Answer = ({ text, isSelected, isCorrect, red, green, gray }) => {
   return (
     <div className='Answer'>
         <div>{text}</div>

@@ -28,7 +28,7 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore }) =
         <h4>{question}</h4>
         <div className='question--answer-container'>
           {answers.map((answer, i) => (
-            <Answer key={i} text={answer.text}/>
+            <Answer key={i} {...answer}/>
           ))}
         </div>
         <hr className='question--linebreak'></hr>
