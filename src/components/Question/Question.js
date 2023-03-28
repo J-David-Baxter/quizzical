@@ -1,26 +1,36 @@
-import React, { useState } from 'react';
-import shuffle from '../../utils/shuffle';
+import React, { useEffect, useState } from 'react';
+import shuffleAnswers from '../../utils/shuffle';
+import Answer from '../Answer/Answer';
 import './Question.css';
 
 const Question = ({ question, correctAnswer, incorrectAnswers }) => {
-  
-
-  const [answers, setAnswers] = useState(() => {
-    let answerArray = incorrectAnswers.push(correctAnswer);
-    let shuffledAnswers = shuffle(answerArray);
-    return shuffledAnswers.map(answer => ({
-        text: answer,
-        isSelected: false,
-        isCorrect: answer === correctAnswer,
-        red: false,
-        green: false,
-        white: false
-    }))
+  let answers = incorrectAnswers.concat(correctAnswer);
+  shuffleAnswers(answers);
+  let answerArray = answers.map((answer, i) => {
+    return {
+      text: answer,
+      isSelected: false,
+      isCorrect: answer === correctAnswer,
+      red: false,
+      green: false,
+      gray: false
+    }
   })
-  
+
+  const [allAnswers, setAllAnswers] = useState([]);
+
+  useEffect(() => {
+    setAllAnswers(answerArray)
+  }, [question])
+
   return (
     <div className='Question'>
         <h4>{question}</h4>
+        <div className='question--answer-container'>
+          {allAnswers.map((answer, i) => (
+            <Answer key={i} text={answer.text}/>
+          ))}
+        </div>
         <hr className='question--linebreak'></hr>
     </div>
   )

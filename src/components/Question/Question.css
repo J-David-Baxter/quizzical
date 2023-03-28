@@ -10,3 +10,8 @@
     border: 0.794239px solid #DBDEF0;
     transform: rotate(-0.05deg);
 }
+
+.question--answer-container {
+    display: flex;
+    gap: 15px;
+}

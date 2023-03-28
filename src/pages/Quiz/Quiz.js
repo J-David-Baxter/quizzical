@@ -8,12 +8,10 @@ const Quiz = () => {
   const [quizScore, setQuizScore] = useState(0);
   
   useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple')
+    fetch('https://opentdb.com/api.php?amount=5')
         .then(res => res.json())
         .then(data => setQuestions(data.results))
   }, [])
-
-  console.log(questions)
 
   return (
     <div className='Quiz'>
