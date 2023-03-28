@@ -1,12 +1,12 @@
 import React from 'react';
 import './Home.css';
 
-const Home = ({ isPlaying }) => {
+const Home = ({ setIsPlaying }) => {
   return (
     <div className='Home'>
         <h1 className='home--title'>Quizzical</h1>
         <p className='home--text'>Take a multiple choice quiz!</p>
-        <button className='home--btn'>Start quiz</button>
+        <button className='home--btn' onClick={() => setIsPlaying(true)}>Start quiz</button>
     </div>
   )
 }

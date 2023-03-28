@@ -4,12 +4,12 @@ import { useState } from 'react';
 import Quiz from './pages/Quiz/Quiz';
 
 function App() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   
   return (
     <div className="App">
       {!isPlaying ? 
-        <Home isPlaying={isPlaying}/> :
+        <Home setIsPlaying={setIsPlaying}/> :
         <Quiz />
       }
     </div>
