@@ -22,6 +22,7 @@ const Quiz = () => {
                 correctAnswer={question['correct_answer']}
                 incorrectAnswers={question['incorrect_answers']}
                 setQuizScore={setQuizScore}
+                quizIsSubmitted={quizIsSubmitted}
             />
         ))}
         {!quizIsSubmitted ?

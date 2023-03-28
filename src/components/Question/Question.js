@@ -3,7 +3,7 @@ import shuffleAnswers from '../../utils/shuffle';
 import Answer from '../Answer/Answer';
 import './Question.css';
 
-const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore }) => {
+const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore, quizIsSubmitted }) => {
   let allAnswers = incorrectAnswers.concat(correctAnswer);
   shuffleAnswers(allAnswers);
   let answerArray = allAnswers.map((answer, i) => {
@@ -25,6 +25,8 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore }) =
     }))
   }
 
+
+
   useEffect(() => {
     setAnswers(answerArray)
   }, [question])
@@ -34,7 +36,7 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore }) =
         <h4>{question}</h4>
         <div className='question--answer-container'>
           {answers.map((answer, i) => (
-            <Answer key={i} {...answer} toggleSelected={() => toggleSelected(i)}/>
+            <Answer key={i} {...answer} toggleSelected={() => toggleSelected(i)} quizIsSubmitted={quizIsSubmitted}/>
           ))}
         </div>
         <hr className='question--linebreak'></hr>
