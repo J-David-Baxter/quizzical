@@ -21,7 +21,7 @@ const Question = ({ question, correctAnswer, incorrectAnswers }) => {
   return (
     <div className='Question'>
         <h4>{question}</h4>
-
+        <hr className='question--linebreak'></hr>
     </div>
   )
 }

@@ -25,6 +25,10 @@ const Quiz = () => {
                 incorrectAnswers={question['incorrect_answers']}
             />
         ))}
+        {!quizIsSubmitted ?
+            <button className='quiz--btn'>Check answers</button> :
+            <p>You scored {quizScore}/5 correct answers</p>
+        }
     </div>
   )
 }

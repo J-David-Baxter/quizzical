@@ -1,4 +1,12 @@
 .Question {
-    margin-left: 75px;
-    margin-bottom: 30px;
+    margin: 0rem 0 0rem 10rem;
+    color: #293264;
+    line-height: 19px;
+    font-size: 1rem;
+}
+
+.question--linebreak {
+    color: #DBDEF0;
+    border: 0.794239px solid #DBDEF0;
+    transform: rotate(-0.05deg);
 }

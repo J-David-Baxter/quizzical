@@ -1,3 +1,16 @@
 .Quiz {
     font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz--btn {
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    background-color: #4D5B9E;
+    color: #F5F7FB;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3rem;
 }
