@@ -21,10 +21,11 @@ const Quiz = () => {
                 question={question.question}
                 correctAnswer={question['correct_answer']}
                 incorrectAnswers={question['incorrect_answers']}
+                setQuizScore={setQuizScore}
             />
         ))}
         {!quizIsSubmitted ?
-            <button className='quiz--btn'>Check answers</button> :
+            <button className='quiz--btn' onClick={() => setQuizIsSubmitted(true)}>Check answers</button> :
             <p>You scored {quizScore}/5 correct answers</p>
         }
     </div>

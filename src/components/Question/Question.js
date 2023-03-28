@@ -3,10 +3,10 @@ import shuffleAnswers from '../../utils/shuffle';
 import Answer from '../Answer/Answer';
 import './Question.css';
 
-const Question = ({ question, correctAnswer, incorrectAnswers }) => {
-  let answers = incorrectAnswers.concat(correctAnswer);
-  shuffleAnswers(answers);
-  let answerArray = answers.map((answer, i) => {
+const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore }) => {
+  let allAnswers = incorrectAnswers.concat(correctAnswer);
+  shuffleAnswers(allAnswers);
+  let answerArray = allAnswers.map((answer, i) => {
     return {
       text: answer,
       isSelected: false,
@@ -17,17 +17,17 @@ const Question = ({ question, correctAnswer, incorrectAnswers }) => {
     }
   })
 
-  const [allAnswers, setAllAnswers] = useState([]);
+  const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
-    setAllAnswers(answerArray)
+    setAnswers(answerArray)
   }, [question])
 
   return (
     <div className='Question'>
         <h4>{question}</h4>
         <div className='question--answer-container'>
-          {allAnswers.map((answer, i) => (
+          {answers.map((answer, i) => (
             <Answer key={i} text={answer.text}/>
           ))}
         </div>
