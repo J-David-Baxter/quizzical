@@ -5,8 +5,8 @@
 }
 
 .quiz--btn {
-    width: 10rem;
-    height: 3rem;
+    width: 12rem;
+    height: 4rem;
     border: none;
     background-color: #4D5B9E;
     color: #F5F7FB;
@@ -14,4 +14,6 @@
     margin: 0 auto;
     margin-top: 3rem;
     cursor: pointer;
+    margin-bottom: 3rem;
+    font-size: 1.3rem;
 }

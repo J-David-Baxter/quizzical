@@ -1,0 +1,14 @@
+.answer--text {
+    border: 0.771045px solid #4D5B9E;
+    border-radius: 7.71045px;
+    width: 10rem;
+    height: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: #293264;
+    background-color: #F5F7FB;
+}
