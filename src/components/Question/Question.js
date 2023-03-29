@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import shuffleAnswers from '../../utils/shuffle';
+import decodeHTML from '../../utils/decodeHTML';
 import Answer from '../Answer/Answer';
 import './Question.css';
 
@@ -16,6 +17,8 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore, qui
       gray: false
     }
   })
+
+  let decodedText = decodeHTML(question)
   
   const [answers, setAnswers] = useState([]);
 
@@ -46,7 +49,7 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore, qui
 
   return (
     <div className='Question'>
-        <h4>{question}</h4>
+        <h4>{decodedText}</h4>
         <div className='question--answer-container'>
           {answers.map((answer, i) => (
             <Answer key={i} {...answer} toggleSelected={() => toggleSelected(i)} quizIsSubmitted={quizIsSubmitted}/>

@@ -1,8 +1,10 @@
 import React from 'react';
+import decodeHTML from '../../utils/decodeHTML';
 import './Answer.css';
 
 const Answer = ({ text, isSelected, isCorrect, red, green, gray, toggleSelected, quizIsSubmitted }) => {
   let styles = {}
+  let decodedAnswer = decodeHTML(text)
   
   function setStyle(obj) {
     if (isSelected) {
@@ -22,7 +24,7 @@ const Answer = ({ text, isSelected, isCorrect, red, green, gray, toggleSelected,
   
   return (
     <div className='Answer'>
-        <p style={setStyle(styles)} className='answer--text' onClick={toggleSelected}>{text}</p>
+        <p style={setStyle(styles)} className='answer--text' onClick={toggleSelected}>{decodedAnswer}</p>
     </div>
   )
 }
