@@ -4,18 +4,9 @@ import Answer from '../Answer/Answer';
 import './Question.css';
 
 const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore, quizIsSubmitted }) => {
-  const [answers, setAnswers] = useState([]);
-
-  function toggleSelected(index) {
-    setAnswers(prev => prev.map((answer, i) => {
-      return i === index ? {...answer, isSelected: !answer.isSelected} : {...answer, isSelected: false}
-    }))
-  }
-
-  useEffect(() => {
-    let allAnswers = incorrectAnswers.concat(correctAnswer);
+  let allAnswers = incorrectAnswers.concat(correctAnswer);
     shuffleAnswers(allAnswers);
-    let answerArray = allAnswers.map((answer, i) => {
+    let initialState = allAnswers.map((answer, i) => {
     return {
       text: answer,
       isSelected: false,
@@ -25,8 +16,18 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore, qui
       gray: false
     }
   })
-    setAnswers(answerArray)
-  }, [question, correctAnswer, incorrectAnswers])
+  
+  const [answers, setAnswers] = useState([]);
+
+  function toggleSelected(index) {
+    setAnswers(prev => prev.map((answer, i) => {
+      return i === index ? {...answer, isSelected: !answer.isSelected} : {...answer, isSelected: false}
+    }))
+  }
+
+  useEffect(() => {
+    setAnswers(initialState)
+  }, [question])
 
   useEffect(() => {
      setAnswers(prev => prev.map(answer => {
@@ -48,7 +49,7 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore, qui
         <h4>{question}</h4>
         <div className='question--answer-container'>
           {answers.map((answer, i) => (
-            <Answer key={i} {...answer} toggleSelected={() => toggleSelected(i)}/>
+            <Answer key={i} {...answer} toggleSelected={() => toggleSelected(i)} quizIsSubmitted={quizIsSubmitted}/>
           ))}
         </div>
         <hr className='question--linebreak'></hr>

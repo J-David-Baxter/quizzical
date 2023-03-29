@@ -1,18 +1,18 @@
 import React from 'react';
 import './Answer.css';
 
-const Answer = ({ text, isSelected, isCorrect, red, green, gray, toggleSelected }) => {
+const Answer = ({ text, isSelected, isCorrect, red, green, gray, toggleSelected, quizIsSubmitted }) => {
   let styles = {}
   
   function setStyle(obj) {
     if (isSelected) {
       obj.backgroundColor = '#D6DBF5'
-    } else if (red) {
+    } else if (red & quizIsSubmitted) {
       obj.backgroundColor = '#F8BCBC'
       obj.opacity = '0.5'
-    } else if (green) {
+    } else if (green && quizIsSubmitted) {
       obj.backgroundColor = '#94D7A2'
-    } else if (gray) {
+    } else if (gray && quizIsSubmitted) {
       obj.opacity = '0.5'
     }
     return obj;
