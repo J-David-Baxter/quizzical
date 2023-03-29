@@ -4,6 +4,13 @@
     flex-direction: column;
 }
 
+.quiz--result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
 .quiz--btn {
     width: 12rem;
     height: 4rem;
@@ -11,9 +18,14 @@
     background-color: #4D5B9E;
     color: #F5F7FB;
     display: block;
-    margin: 0 auto;
     margin-top: 3rem;
     cursor: pointer;
     margin-bottom: 3rem;
+    font-size: 1.3rem;
+}
+
+.quiz--score {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size: 1.3rem;
 }

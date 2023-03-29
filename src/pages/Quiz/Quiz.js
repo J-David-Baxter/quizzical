@@ -26,8 +26,13 @@ const Quiz = () => {
             />
         ))}
         {!quizIsSubmitted ?
-            <button className='quiz--btn' onClick={() => setQuizIsSubmitted(true)}>Check answers</button> :
-            <p>You scored {quizScore}/5 correct answers</p>
+            <div className='quiz--result-container'>
+              <button className='quiz--btn' onClick={() => setQuizIsSubmitted(true)}>Check answers</button> 
+            </div> :
+            <div className='quiz--result-container'>
+              <p className='quiz--score'>You scored {quizScore}/5 correct answers</p>
+              <button className='quiz--btn'>Play again</button>
+            </div>
         }
     </div>
   )

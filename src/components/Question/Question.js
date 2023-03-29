@@ -48,7 +48,7 @@ const Question = ({ question, correctAnswer, incorrectAnswers, setQuizScore, qui
         <h4>{question}</h4>
         <div className='question--answer-container'>
           {answers.map((answer, i) => (
-            <Answer key={i} {...answer} toggleSelected={() => toggleSelected(i)} quizIsSubmitted={quizIsSubmitted}/>
+            <Answer key={i} {...answer} toggleSelected={() => toggleSelected(i)}/>
           ))}
         </div>
         <hr className='question--linebreak'></hr>
