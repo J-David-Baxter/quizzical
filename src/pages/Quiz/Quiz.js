@@ -10,12 +10,17 @@ const Quiz = () => {
   function resetQuiz() {
     setQuizScore(0);
     setQuizIsSubmitted(false);
+    getQuiz();
   }
   
-  useEffect(() => {
+  function getQuiz() {
     fetch('https://opentdb.com/api.php?amount=5')
         .then(res => res.json())
         .then(data => setQuestions(data.results))
+  }
+
+  useEffect(() => {
+    getQuiz();
   }, [])
 
   return (
