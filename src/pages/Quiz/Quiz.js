@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Question from '../../components/Question/Question';
 import './Quiz.css';
 
-const Quiz = () => {
+const Quiz = ({ setIsPlaying }) => {
   const [questions, setQuestions] = useState([]);
   const [quizIsSubmitted, setQuizIsSubmitted] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
@@ -19,12 +19,17 @@ const Quiz = () => {
         .then(data => setQuestions(data.results))
   }
 
+  function handleHomeClick() {
+    setIsPlaying(false)
+  }
+
   useEffect(() => {
     getQuiz();
   }, [])
 
   return (
     <div className='Quiz'>
+        <p className='quiz--home-link' onClick={handleHomeClick}>Home</p>
         <h1 className='quiz--title'>Quizzical</h1>
         {questions.map((question, i) => (
             <Question 
