@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Question from '../../components/Question/Question';
 import './Quiz.css';
 
-const Quiz = ({ setIsPlaying }) => {
+const Quiz = ({ setIsPlaying, url }) => {
   const [questions, setQuestions] = useState([]);
   const [quizIsSubmitted, setQuizIsSubmitted] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
@@ -14,7 +14,7 @@ const Quiz = ({ setIsPlaying }) => {
   }
   
   function getQuiz() {
-    fetch('https://opentdb.com/api.php?amount=5')
+    fetch(url)
         .then(res => res.json())
         .then(data => setQuestions(data.results))
   }
