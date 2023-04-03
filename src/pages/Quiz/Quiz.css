@@ -4,6 +4,18 @@
     flex-direction: column;
 }
 
+.quiz--title {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 2em;
+}
+
+.quiz--linebreak {
+    color: #DBDEF0;
+    border: 0.794239px solid #DBDEF0;
+    transform: rotate(-0.05deg);
+}
+
 .quiz--result-container {
     display: flex;
     justify-content: center;

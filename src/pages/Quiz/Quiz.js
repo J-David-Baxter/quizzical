@@ -25,6 +25,7 @@ const Quiz = () => {
 
   return (
     <div className='Quiz'>
+        <h1 className='quiz--title'>Quizzical</h1>
         {questions.map((question, i) => (
             <Question 
                 key={i}
