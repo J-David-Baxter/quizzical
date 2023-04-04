@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Question from '../../components/Question/Question';
+import { ColorRing } from 'react-loader-spinner';
 import './Quiz.css';
 
 const Quiz = ({ setIsPlaying, url }) => {
@@ -31,6 +32,16 @@ const Quiz = ({ setIsPlaying, url }) => {
     <div className='Quiz'>
         <p className='quiz--home-link' onClick={handleHomeClick}>Home</p>
         <h1 className='quiz--title'>Quizzical</h1>
+        {questions.length === 0 && 
+        <ColorRing 
+          visible={true}
+          height={80}
+          width={80}
+          wrapperStyle={{margin: '0 auto'}}
+          ariaLabel='blocks-loading'
+          colors={['#293264', '#293264', '#293264', '#293264', '#293264']}
+        />
+        }
         {questions.map((question, i) => (
             <Question 
                 key={i}
@@ -46,7 +57,7 @@ const Quiz = ({ setIsPlaying, url }) => {
               <button className='quiz--btn' onClick={() => setQuizIsSubmitted(true)}>Check answers</button> 
             </div> :
             <div className='quiz--result-container'>
-              <p className='quiz--score'>You scored {quizScore}/5 correct answers</p>
+              <p className='quiz--score'>You scored {quizScore}/{questions.length} correct answers</p>
               <button className='quiz--btn' onClick={resetQuiz}>Play again</button>
             </div>
         }
