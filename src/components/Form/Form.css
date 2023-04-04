@@ -25,7 +25,6 @@ label {
 .form {
     display: flex;
     flex-direction: column;
-    margin-right: 10em;
 }
 
 .form--title {
