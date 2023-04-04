@@ -1,0 +1,33 @@
+input, select {
+    margin-bottom: 2.5em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: none;
+    border: 2px solid #293264;
+}
+
+label {
+    margin-bottom: 0.5em;
+    color: #293264;
+}
+
+.Form {
+    display: flex;
+}
+
+.vertical-line {
+    color: #293264;
+    border: 0.794239px solid #293264;
+    transform: rotate(-0.05deg);
+    margin-right: 5em;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10em;
+}
+
+.form--title {
+    color: #293264;
+}
