@@ -11,4 +11,4 @@
 - User can customize quiz (amount of questions, category, difficulty, format) from home page
 
 ### To do
-- Add page transitions and loading spinner
+- Add page transitions
