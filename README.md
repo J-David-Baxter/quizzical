@@ -9,3 +9,6 @@
 - Unanswered questions are treated as incorrect when the quiz is scored
 - Quizzes can't be retaken, play again button makes a new random quiz
 - User can customize quiz (amount of questions, category, difficulty, format) from home page
+
+### Deployment
+https://quizzical-jdb.netlify.app/
